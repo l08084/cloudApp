@@ -11,7 +11,7 @@ export class HttpService {
     // Web API URL
     WEB_API_URL: string = 'https://webservice.recruit.co.jp/ab-road/tour/v1/';
     // APIキー
-    API_KEY = '入手したAPIキー';
+    API_KEY = 'eea7fadee0cb064b';
     // 取得件数
     DEFAULT_SIZE = '30';
     // 取得の順番(人気順:5)
