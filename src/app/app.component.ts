@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef, HostListener } from '@angular/core';
 import { HttpService } from './http.service';
 import { DetailComponent } from './detail.component';
 
@@ -41,6 +41,14 @@ export class AppComponent implements OnInit {
     this.getTour();
     // 保存したブックマークの取得
     this.initBookmarks();
+    // PCとモバイルの判定
+    this.onScreenResize();
+  }
+
+  // resizeイベント
+  @HostListener('window:resize')
+  onScreenResize() {
+    this.isMobile = (innerWidth < this.MOBILE_SCREEN_WIDTH);
   }
 
   // ツアー詳細ボタンクリック時

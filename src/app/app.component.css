@@ -172,3 +172,23 @@ button {
 img {
     height: 86px;
 }
+
+/*-----------------*/
+/*モバイル*/
+/*-----------------*/
+/*文字*/
+.mobileText {
+    font-size: 1em;
+}
+
+/*写真*/
+.mobileImg {
+    float: left;
+    width: 100px;
+    height: inherit;
+}
+
+/*写真表示のセル*/
+.td_photo_mobile {
+    width: 100px;
+}
