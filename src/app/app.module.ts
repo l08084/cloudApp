@@ -7,20 +7,26 @@ import { AppComponent } from './app.component';
 import { JsonpModule } from '@angular/http';
 import { HttpService } from './http.service';
 
-import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { ModalModule, CarouselModule, CollapseModule } from 'ng2-bootstrap';
+import { DetailComponent } from './detail.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     // HttpModule
     JsonpModule,
-    Ng2BootstrapModule
+    ModalModule.forRoot(),
+    CarouselModule.forRoot(),
+    CollapseModule.forRoot(),
   ],
-  providers: [HttpService],
+  providers: [
+    HttpService,
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

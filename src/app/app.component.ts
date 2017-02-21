@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { HttpService } from './http.service';
+import { DetailComponent } from './detail.component';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,9 @@ import { HttpService } from './http.service';
 })
 export class AppComponent implements OnInit {
   // 初期化処理完了通知のngOnInit()実装
+
+  // ツアー明細ダイアログの参照取得
+  @ViewChild('detailDialog') detailComponent: DetailComponent;
 
   tourObj; // 選択したツアー情報(1件分)
   selectedData; // 選択したエリアのツアー情報
@@ -22,8 +26,14 @@ export class AppComponent implements OnInit {
     { code: 'DUS', name: 'アメリカ', data: null},
     { code: 'BOOKMARK', name: 'お気に入り', data: null},
   ];
+  viewContainerRef; // modal表示用
 
-  public constructor(private httpService: HttpService) { }
+  public constructor(
+    private httpService: HttpService,
+    viewContainerRef: ViewContainerRef
+    ) {
+      this.viewContainerRef = viewContainerRef;
+     }
 
   // アプリ起動時の処理
   ngOnInit() {
@@ -31,6 +41,12 @@ export class AppComponent implements OnInit {
     this.getTour();
     // 保存したブックマークの取得
     this.initBookmarks();
+  }
+
+  // ツアー詳細ボタンクリック時
+  onDetailClick(index) {
+    this.tourObj = this.selectedData[index];
+    this.detailComponent.openDialog();
   }
 
   // エリアメニュー選択時
