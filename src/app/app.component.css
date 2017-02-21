@@ -104,3 +104,71 @@ table {
     border-color: black;
     background-color: white;
 }
+
+/*行*/
+tr {
+    height: 90px;
+    background-color: white;
+}
+
+/*行(偶数行目を着色)*/
+table tr:nth-child(odd) {
+    background-color: cornsilk;
+}
+
+/*セル*/
+td {
+    padding: 0.3em;
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family: sans-serif;
+}
+
+/*順位表示セル*/
+.td_id {
+    width: 3em;
+    text-align: center;
+}
+
+/*国名表示セル*/
+.td_country {
+    width: 6em;
+    text-align: left;
+}
+
+/*写真表示セル*/
+.td_photo {
+    width: 120px;
+    text-align: center;
+}
+
+/*価格表示セル*/
+.td_price {
+    width: 8em;
+    font-size: 1.2em;
+    text-align: right;
+    color: red;
+}
+
+/*説明表示セル*/
+.td_description {
+    text-align: left;
+    font-size: 1.1em;
+}
+
+/*詳細情報呼び出しセル*/
+.td_link {
+    width: 3em;
+    text-align: center;
+}
+
+/*詳細情報呼び出しボタン*/
+button {
+    margin: 0 1em 0 1em;
+    font-weight: bold;
+}
+
+/*写真(PC用)*/
+img {
+    height: 86px;
+}

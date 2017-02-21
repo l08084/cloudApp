@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { JsonpModule } from '@angular/http';
 import { HttpService } from './http.service';
 
+import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -15,7 +17,8 @@ import { HttpService } from './http.service';
     BrowserModule,
     FormsModule,
     // HttpModule
-    JsonpModule
+    JsonpModule,
+    Ng2BootstrapModule
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]
